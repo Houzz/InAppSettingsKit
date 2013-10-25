@@ -525,7 +525,7 @@
 			baseConfigurationReference = E4A95F3A177DB25C00FF0906 /* iOS-StaticLibrary.xcconfig */;
 			buildSettings = {
 				DSTROOT = /tmp/InAppSettingsKit.dst;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
