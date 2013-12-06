@@ -31,7 +31,7 @@
         UIViewAutoresizingFlexibleBottomMargin |
         UIViewAutoresizingFlexibleLeftMargin;
         _textField.font = [UIFont systemFontOfSize:17.0f];
-		_textField.minimumFontSize = kIASKMinimumFontSize;
+		_textField.contentScaleFactor = .8;
         _textField.textColor = [UIColor colorWithRed:0.275 green:0.376 blue:0.522 alpha:1.000];
         [self.contentView addSubview:_textField];
         

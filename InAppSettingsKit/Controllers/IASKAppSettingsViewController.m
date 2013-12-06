@@ -404,9 +404,9 @@ CGRect IASKCGRectSwap(CGRect rect);
 	NSString *title;
 	if ((title = [self tableView:tableView titleForHeaderInSection:section])) {
 		CGSize size = [title sizeWithFont:[UIFont boldSystemFontOfSize:[UIFont labelFontSize]] 
-						constrainedToSize:CGSizeMake(tableView.frame.size.width - 2*kIASKHorizontalPaddingGroupTitles, (CGFloat)1e99)
+						constrainedToSize:CGSizeMake(tableView.frame.size.width - 2*kIASKHorizontalPaddingGroupTitles, 1000.f)
 							lineBreakMode:NSLineBreakByWordWrapping];
-		return round(size.height + kIASKVerticalPaddingGroupTitles);
+		return (CGFloat)round(size.height + kIASKVerticalPaddingGroupTitles);
 	}
 	return 0;
 }
@@ -458,8 +458,8 @@ CGRect IASKCGRectSwap(CGRect rect);
 	} else {
 		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
 	}
-	cell.textLabel.minimumFontSize = kIASKMinimumFontSize;
-	cell.detailTextLabel.minimumFontSize = kIASKMinimumFontSize;
+	cell.textLabel.minimumScaleFactor = .8;
+	cell.detailTextLabel.minimumScaleFactor = .8;
 	return cell;
 }
 
