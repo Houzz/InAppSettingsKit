@@ -31,8 +31,8 @@
         UIViewAutoresizingFlexibleBottomMargin |
         UIViewAutoresizingFlexibleLeftMargin;
         _textField.font = [UIFont systemFontOfSize:17.0f];
-		_textField.contentScaleFactor = .8;
-        _textField.textColor = [UIColor colorWithRed:0.275 green:0.376 blue:0.522 alpha:1.000];
+		_textField.contentScaleFactor = .8f;
+        _textField.textColor = [UIColor colorWithRed:0.275f green:0.376f blue:0.522f alpha:1.000f];
         [self.contentView addSubview:_textField];
         
         self.selectionStyle = UITableViewCellSelectionStyleNone;
