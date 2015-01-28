@@ -99,12 +99,12 @@
 }
 
 - (NSArray*)privacySettingsSpecifiers {
-	NSMutableDictionary *dict = [@{kIASKTitle: NSLocalizedStringFromTable(@"Privacy", @"IASKLocalizable", @"iOS 8+ Privacy cell: title"),
+	NSMutableDictionary *dict = [@{kIASKTitle: NSLocalizedStringFromTable(@"Privacy", @"data", @"iOS 8+ Privacy cell: title"),
 								   kIASKKey: @"IASKPrivacySettingsCellKey",
 								   kIASKType: kIASKOpenURLSpecifier,
 								   kIASKFile: UIApplicationOpenSettingsURLString,
 								   } mutableCopy];
-	NSString *subtitle = NSLocalizedStringWithDefaultValue(@"Open in Settings app", @"IASKLocalizable", [NSBundle mainBundle], @"", @"iOS 8+ Privacy cell: subtitle");
+	NSString *subtitle = NSLocalizedStringWithDefaultValue(@"Open in Settings app", @"data", [NSBundle mainBundle], @"", @"iOS 8+ Privacy cell: subtitle");
 	if (subtitle.length) {
 		dict [kIASKSubtitle] = subtitle;
 	}
