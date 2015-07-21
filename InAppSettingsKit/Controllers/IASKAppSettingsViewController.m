@@ -440,7 +440,7 @@ CGRect IASKCGRectSwap(CGRect rect);
 - (CGFloat)tableView:(UITableView*)tableView heightForHeaderInSection:(NSInteger)section {
 	if ([self tableView:tableView viewForHeaderInSection:section] && [self.delegate respondsToSelector:@selector(settingsViewController:tableView:heightForHeaderForSection:)]) {
 		CGFloat result;
-		if ((result = [self.delegate settingsViewController:self tableView:tableView heightForHeaderForSection:section])) {
+		if ((result = [self.delegate settingsViewController:self tableView:tableView heightForHeaderForSection:section]) > 0) {
 			return result;
 		}
 		
