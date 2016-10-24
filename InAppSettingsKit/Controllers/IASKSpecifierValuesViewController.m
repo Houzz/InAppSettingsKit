@@ -133,7 +133,7 @@
     [_selection selectRowAtIndexPath:indexPath];
 }
 
-- (CGSize)contentSizeForViewInPopover {
+- (CGSize)preferredContentSize {
     return [[self view] sizeThatFits:CGSizeMake(320, 2000)];
 }
 
