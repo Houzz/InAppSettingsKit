@@ -72,6 +72,11 @@
 	[_tableView flashScrollIndicators];
 }
 
+- (BOOL) hidesBar {
+    return NO;
+}
+
+
 - (void)viewDidLayoutSubviews {
 	[super viewDidLayoutSubviews];
 
