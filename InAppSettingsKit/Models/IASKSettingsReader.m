@@ -114,9 +114,14 @@
 	if (subtitle.length) {
 		dict [kIASKSubtitle] = subtitle;
 	}
-	
+    NSMutableDictionary *passDict = [@{kIASKTitle: NSLocalizedStringFromTable(@"Password", @"data", @"password"),
+                                    kIASKKey: @"changePassword",
+                                    kIASKType: kIASKButtonSpecifier,
+                                    kIASKTextLabelAlignment: kIASKTextLabelAlignmentLeft
+                                    } mutableCopy];
+    
 	return @[@[[[IASKSpecifier alloc] initWithSpecifier:@{kIASKKey: @"IASKPrivacySettingsHeaderKey", kIASKType: kIASKPSGroupSpecifier}],
-			   [[IASKSpecifier alloc] initWithSpecifier:dict],[[IASKSpecifier alloc] initWithSpecifier:dict2]]];
+			   [[IASKSpecifier alloc] initWithSpecifier:dict],[[IASKSpecifier alloc] initWithSpecifier:dict2], [[IASKSpecifier alloc] initWithSpecifier:passDict]]];
 }
 
 - (void)_reinterpretBundle:(NSDictionary*)settingsBundle {
