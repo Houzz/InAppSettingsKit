@@ -30,3 +30,4 @@ FOUNDATION_EXPORT const unsigned char InAppSettingsKitFrameworkVersionString[];
 #import <InAppSettingsKit/IASKTextView.h>
 #import <InAppSettingsKit/IASKTextViewCell.h>
 #import <InAppSettingsKit/IASKViewController.h>
+#import <InAppSettingsKit/IASKMultipleValueSelection.h>
