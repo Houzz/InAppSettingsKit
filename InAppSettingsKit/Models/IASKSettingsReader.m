@@ -98,42 +98,9 @@
 	}
 }
 
-- (NSArray*)privacySettingsSpecifiers {
-	NSMutableDictionary *dict = [@{kIASKTitle: NSLocalizedStringFromTable(@"Privacy (Device)", @"data", @"iOS 8+ Privacy cell: title"),
-								   kIASKKey: @"IASKPrivacySettingsCellKey",
-								   kIASKType: kIASKOpenURLSpecifier,
-								   kIASKFile: UIApplicationOpenSettingsURLString,
-                                   } mutableCopy];
-    NSMutableDictionary *dict2 = [@{kIASKTitle: NSLocalizedStringFromTable(@"Privacy (User)", @"data", @"consents privacy"),
-                                    kIASKKey: @"showUserConsents",
-                                    kIASKType: kIASKButtonSpecifier,
-                                    @"Value": @"consents list",
-                                    kIASKTextLabelAlignment: kIASKTextLabelAlignmentLeft
-                                    } mutableCopy];
-	NSString *subtitle = NSLocalizedStringWithDefaultValue(@"Open in Settings app", @"data", [NSBundle mainBundle], @"", @"iOS 8+ Privacy cell: subtitle");
-	if (subtitle.length) {
-		dict [kIASKSubtitle] = subtitle;
-	}
-    NSMutableDictionary *passDict = [@{kIASKTitle: NSLocalizedStringFromTable(@"Password", @"data", @"password"),
-                                    kIASKKey: @"changePassword",
-                                    kIASKType: kIASKButtonSpecifier,
-                                    kIASKTextLabelAlignment: kIASKTextLabelAlignmentLeft
-                                    } mutableCopy];
-    
-	return @[@[[[IASKSpecifier alloc] initWithSpecifier:@{kIASKKey: @"IASKPrivacySettingsHeaderKey", kIASKType: kIASKPSGroupSpecifier}],
-			   [[IASKSpecifier alloc] initWithSpecifier:dict],[[IASKSpecifier alloc] initWithSpecifier:dict2], [[IASKSpecifier alloc] initWithSpecifier:passDict]]];
-}
-
 - (void)_reinterpretBundle:(NSDictionary*)settingsBundle {
     NSArray *preferenceSpecifiers	= [settingsBundle objectForKey:kIASKPreferenceSpecifiers];
     NSMutableArray *dataSource		= [NSMutableArray array];
-	
-	if (self.showPrivacySettings) {
-		IASK_IF_IOS8_OR_GREATER
-		(
-		 [dataSource addObjectsFromArray:self.privacySettingsSpecifiers];
-		 );
-	}
 
     for (NSDictionary *specifierDictionary in preferenceSpecifiers) {
         IASKSpecifier *newSpecifier = [[IASKSpecifier alloc] initWithSpecifier:specifierDictionary];
